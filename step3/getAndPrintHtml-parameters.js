@@ -1,8 +1,4 @@
 var https = require("https");
-// var requestOptions = {
-//   host: 'sytantris.github.io',
-//   path: '/http-examples/step2.html'
-// };
 
 var requestOptions = {
   host: process.argv[2],
@@ -11,10 +7,6 @@ var requestOptions = {
 
 
 function getAndPrintHTML (options) {
-  //append each chunk of data to a variable
-  //as it is received,
-  //and then console.log the data
-  //once all of the data has been received.
   var dataChunks = [];
   https.get(requestOptions, function (response) {
     response.setEncoding('utf8');
